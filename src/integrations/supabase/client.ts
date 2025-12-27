@@ -15,3 +15,8 @@ export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABL
     autoRefreshToken: true,
   }
 });
+
+// Helper to create service role client (server-side only). Do NOT expose service key to browser.
+export function createServiceClient(serviceKey: string) {
+  return createClient(SUPABASE_URL, serviceKey);
+}

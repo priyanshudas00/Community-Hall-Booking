@@ -293,12 +293,17 @@ export type Database = {
         Row: {
           about_text: string | null
           address: string | null
-          business_hours: string | null
+          bank_account: string | null
+          bank_name: string | null
+          branch: string | null
+          contact_email: string | null
           created_at: string | null
           google_maps_embed: string | null
           hero_subtitle: string | null
           hero_title: string | null
           id: string
+          ifsc: string | null
+          logo_path: string | null
           phone_number: string | null
           updated_at: string | null
           whatsapp_number: string | null
@@ -306,12 +311,17 @@ export type Database = {
         Insert: {
           about_text?: string | null
           address?: string | null
-          business_hours?: string | null
+          bank_account?: string | null
+          bank_name?: string | null
+          branch?: string | null
+          contact_email?: string | null
           created_at?: string | null
           google_maps_embed?: string | null
           hero_subtitle?: string | null
           hero_title?: string | null
           id?: string
+          ifsc?: string | null
+          logo_path?: string | null
           phone_number?: string | null
           updated_at?: string | null
           whatsapp_number?: string | null
@@ -319,12 +329,17 @@ export type Database = {
         Update: {
           about_text?: string | null
           address?: string | null
-          business_hours?: string | null
+          bank_account?: string | null
+          bank_name?: string | null
+          branch?: string | null
+          contact_email?: string | null
           created_at?: string | null
           google_maps_embed?: string | null
           hero_subtitle?: string | null
           hero_title?: string | null
           id?: string
+          ifsc?: string | null
+          logo_path?: string | null
           phone_number?: string | null
           updated_at?: string | null
           whatsapp_number?: string | null

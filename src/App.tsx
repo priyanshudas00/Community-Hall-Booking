@@ -20,6 +20,7 @@ import GalleryManagement from "./pages/admin/GalleryManagement";
 import EventsManagement from "./pages/admin/EventsManagement";
 import FacilitiesManagement from "./pages/admin/FacilitiesManagement";
 import SiteSettings from "./pages/admin/SiteSettings";
+import BookingsManagement from "./pages/admin/BookingsManagement";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
             <Route path="/admin/gallery" element={<GalleryManagement />} />
             <Route path="/admin/events" element={<EventsManagement />} />
             <Route path="/admin/facilities" element={<FacilitiesManagement />} />
+            <Route path="/admin/bookings" element={<BookingsManagement />} />
             <Route path="/admin/settings" element={<SiteSettings />} />
             
             <Route path="*" element={<NotFound />} />
