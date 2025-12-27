@@ -2,6 +2,13 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ProgressiveImage } from "@/components/ui/progressive-image";
+
+// Import venue images
+import entrance from "@/assets/venue/entrance.webp";
+import interior from "@/assets/venue/interior.webp";
+import exterior from "@/assets/venue/exterior.webp";
+import entranceOutside from "@/assets/venue/entrance-outside.webp";
 
 export function AboutSection() {
   return (
@@ -71,15 +78,15 @@ export function AboutSection() {
           >
             <div className="space-y-4">
               <div className="rounded-lg overflow-hidden shadow-elegant">
-                <img
-                  src="/src/assets/venue/entrance.webp"
+                <ProgressiveImage
+                  src={entrance}
                   alt="The Red Garden Entrance"
                   className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="rounded-lg overflow-hidden shadow-elegant">
-                <img
-                  src="/src/assets/venue/interior.webp"
+                <ProgressiveImage
+                  src={interior}
                   alt="The Red Garden Interior"
                   className="w-full h-32 object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -87,15 +94,15 @@ export function AboutSection() {
             </div>
             <div className="space-y-4 pt-8">
               <div className="rounded-lg overflow-hidden shadow-elegant">
-                <img
-                  src="/src/assets/venue/exterior.webp"
+                <ProgressiveImage
+                  src={exterior}
                   alt="The Red Garden Exterior"
                   className="w-full h-32 object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="rounded-lg overflow-hidden shadow-elegant border-4 border-gold/20">
-                <img
-                  src="/src/assets/venue/entrance-outside.webp"
+                <ProgressiveImage
+                  src={entranceOutside}
                   alt="The Red Garden Outside View"
                   className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                 />

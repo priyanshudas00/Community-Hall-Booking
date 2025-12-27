@@ -6,6 +6,12 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { ProgressiveImage } from "@/components/ui/progressive-image";
+
+import entranceOutside from "@/assets/venue/entrance-outside.webp";
+import entrance from "@/assets/venue/entrance.webp";
+import exterior from "@/assets/venue/exterior.webp";
+import interior from "@/assets/venue/interior.webp";
 
 interface Event {
   id: string;
@@ -13,6 +19,19 @@ interface Event {
   description: string | null;
   image_url: string | null;
 }
+
+// Fallback images for different event types
+const getEventImage = (eventName: string): string => {
+  const imageMap: { [key: string]: string } = {
+    'Wedding': entrance,
+    'Reception': exterior,
+    'Birthday Party': interior,
+    'Engagement': entranceOutside,
+    'Anniversary': entrance,
+    'Corporate Events': exterior,
+  };
+  return imageMap[eventName] || entrance; // Default to entrance if no match
+};
 
 export default function Events() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -78,17 +97,11 @@ export default function Events() {
                   className="group bg-card rounded-xl overflow-hidden shadow-sm border border-border hover:shadow-elegant transition-all"
                 >
                   <div className="relative h-48 overflow-hidden">
-                    {event.image_url ? (
-                      <img
-                        src={event.image_url}
-                        alt={event.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-primary/20 to-gold/20 flex items-center justify-center">
-                        <Calendar className="h-16 w-16 text-primary/40" />
-                      </div>
-                    )}
+                    <ProgressiveImage
+                      src={event.image_url || getEventImage(event.name)}
+                      alt={event.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <h3 className="absolute bottom-4 left-4 font-heading text-xl font-bold text-white">
                       {event.name}

@@ -2,32 +2,39 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ProgressiveImage } from "@/components/ui/progressive-image";
+
+// Import venue images
+import entrance from "@/assets/venue/entrance.webp";
+import interior from "@/assets/venue/interior.webp";
+import exterior from "@/assets/venue/exterior.webp";
+import entranceOutside from "@/assets/venue/entrance-outside.webp";
 
 const eventTypes = [
   {
     name: "Wedding",
     description: "Grand wedding ceremonies with all traditional arrangements",
-    image: "/src/assets/venue/entrance.webp",
+    image: entrance,
   },
   {
     name: "Reception",
     description: "Elegant reception parties for newlyweds",
-    image: "/src/assets/venue/interior.webp",
+    image: interior,
   },
   {
     name: "Birthday Party",
     description: "Memorable birthday celebrations for all ages",
-    image: "/src/assets/venue/exterior.webp",
+    image: exterior,
   },
   {
     name: "Engagement",
     description: "Beautiful engagement ceremonies",
-    image: "/src/assets/venue/entrance-outside.webp",
+    image: entranceOutside,
   },
   {
     name: "Anniversary",
     description: "Celebrate milestones with your loved ones",
-    image: "/src/assets/venue/entrance.webp",
+    image: entrance,
   },
   {
     name: "Corporate Events",
@@ -70,7 +77,7 @@ export function EventsSection() {
               className="group relative rounded-lg overflow-hidden shadow-elegant hover-lift"
             >
               <div className="aspect-[4/3] overflow-hidden">
-                <img
+                <ProgressiveImage
                   src={event.image}
                   alt={event.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"

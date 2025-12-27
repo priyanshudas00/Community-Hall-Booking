@@ -5,6 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { X } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
+import { ProgressiveImage } from "@/components/ui/progressive-image";
 
 import entranceOutside from "@/assets/venue/entrance-outside.webp";
 import entrance from "@/assets/venue/entrance.webp";
@@ -143,7 +144,7 @@ export default function Gallery() {
                     className="relative aspect-square overflow-hidden rounded-xl cursor-pointer group"
                     onClick={() => setSelectedImage(image)}
                   >
-                    <img
+                    <ProgressiveImage
                       src={image.image_url}
                       alt={image.alt_text || "Gallery Image"}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

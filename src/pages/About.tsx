@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { CheckCircle, Heart, Star, Users } from "lucide-react";
+import { ProgressiveImage } from "@/components/ui/progressive-image";
 
 import exterior from "@/assets/venue/exterior.webp";
 import interior from "@/assets/venue/interior.webp";
@@ -98,7 +99,7 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <img
+              <ProgressiveImage
                 src={exterior}
                 alt="The Red Garden Venue"
                 className="rounded-2xl shadow-elegant w-full"
@@ -186,7 +187,7 @@ export default function About() {
               viewport={{ once: true }}
               className="order-1 lg:order-2"
             >
-              <img
+              <ProgressiveImage
                 src={interior}
                 alt="The Red Garden Interior"
                 className="rounded-2xl shadow-elegant w-full"

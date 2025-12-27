@@ -4,6 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { supabase } from "@/integrations/supabase/client";
 import * as LucideIcons from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { ProgressiveImage } from "@/components/ui/progressive-image";
 
 import entranceOutside from "@/assets/venue/entrance-outside.webp";
 import entrance from "@/assets/venue/entrance.webp";
@@ -102,7 +103,7 @@ export default function Venue() {
                 transition={{ delay: index * 0.1 }}
                 className="relative overflow-hidden rounded-xl shadow-elegant group"
               >
-                <img
+                <ProgressiveImage
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-64 md:h-80 object-cover transition-transform duration-500 group-hover:scale-110"
