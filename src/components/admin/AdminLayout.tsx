@@ -54,8 +54,25 @@ export function AdminLayout({ children }: AdminLayoutProps) {
     );
   }
 
-  if (!user || !isAdmin) {
+  // If not authenticated, keep redirect behavior handled in useEffect
+  if (!user) {
     return null;
+  }
+
+  // If user is authenticated but not an admin, show access denied message
+  if (user && !isAdmin) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="max-w-md text-center p-6 bg-card rounded-lg border border-border">
+          <h2 className="font-heading text-xl font-semibold mb-2">Access Denied</h2>
+          <p className="text-muted-foreground mb-4">You are signed in as {user?.email}, but you do not have admin access.</p>
+          <div className="flex gap-2 justify-center">
+            <Button variant="ghost" onClick={() => navigate("/")}>Back to site</Button>
+            <Button onClick={handleSignOut}>Sign Out</Button>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (

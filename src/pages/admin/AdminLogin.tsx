@@ -32,6 +32,18 @@ export default function AdminLogin() {
     }
   }, [user, isAdmin, loading, navigate]);
 
+  // Notify user if they sign in but do not have admin privileges
+  useEffect(() => {
+    if (!loading && user && !isAdmin) {
+      toast({
+        title: "Access Denied",
+        description: "Your account does not have admin privileges. Please contact the site owner.",
+        variant: "destructive",
+      });
+    }
+  }, [user, isAdmin, loading, toast]);
+
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
