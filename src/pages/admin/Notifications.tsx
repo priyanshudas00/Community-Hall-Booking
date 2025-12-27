@@ -32,6 +32,21 @@ export default function Notifications() {
     await fetchNotifications();
   }
 
+  async function runNow() {
+    // Call Edge Function to dispatch the GitHub workflow
+    try {
+      const res = await fetch('/.netlify/functions/dispatch-notifications', { method: 'POST' });
+      if (res.ok) {
+        alert('Notification processing triggered (GitHub workflow dispatched)');
+      } else {
+        const err = await res.json();
+        alert('Dispatch failed: ' + (err?.error || res.statusText));
+      }
+    } catch (e) {
+      alert('Failed to trigger dispatch: ' + e.message);
+    }
+  }
+
   return (
     <AdminLayout>
       <div className="container mx-auto">
@@ -40,6 +55,9 @@ export default function Notifications() {
           <div>Loading...</div>
         ) : (
           <div className="space-y-3">
+            <div className="flex justify-end mb-4">
+              <Button onClick={runNow} variant="secondary">Run Now (process pending notifications)</Button>
+            </div>
             {notifications.map((n) => (
               <div key={n.id} className="p-4 bg-card rounded-lg">
                 <div className="flex justify-between">
