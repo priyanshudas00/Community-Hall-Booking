@@ -3,8 +3,8 @@ import { Layout } from "@/components/layout/Layout";
 import { CheckCircle, Heart, Star, Users } from "lucide-react";
 import { ProgressiveImage } from "@/components/ui/progressive-image";
 
-import exterior from "@/assets/venue/exterior.webp";
-import interior from "@/assets/venue/interior.webp";
+const exterior = "/images/exterior look.jpg";
+const interior = "/images/interior look.jpg";
 
 const values = [
   {

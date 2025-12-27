@@ -6,10 +6,10 @@ import * as LucideIcons from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ProgressiveImage } from "@/components/ui/progressive-image";
 
-import entranceOutside from "@/assets/venue/entrance-outside.webp";
-import entrance from "@/assets/venue/entrance.webp";
-import exterior from "@/assets/venue/exterior.webp";
-import interior from "@/assets/venue/interior.webp";
+const entranceOutside = "/images/enterance from outside.jpg";
+const entrance = "/images/enterance.jpg";
+const exterior = "/images/exterior look.jpg";
+const interior = "/images/interior look.jpg";
 
 interface Facility {
   id: string;

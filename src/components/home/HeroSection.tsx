@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
 // Import venue images
-import entranceOutside from "@/assets/venue/entrance-outside.webp";
-import entrance from "@/assets/venue/entrance.webp";
-import exterior from "@/assets/venue/exterior.webp";
-import interior from "@/assets/venue/interior.webp";
+const entranceOutside = "/images/enterance from outside.jpg";
+const entrance = "/images/enterance.jpg";
+const exterior = "/images/exterior look.jpg";
+const interior = "/images/interior look.jpg";
 
 const images = [entranceOutside, entrance, exterior, interior];
 

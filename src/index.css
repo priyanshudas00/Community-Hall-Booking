@@ -323,5 +323,5 @@ img {
 
 /* Preload critical images */
 .preload-hero {
-  background-image: url('/src/assets/venue/entrance.webp');
+  background-image: url('/images/enterance.jpg');
 }
