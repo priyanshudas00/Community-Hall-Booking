@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 
 // Import venue images
 import entranceOutside from "@/assets/venue/entrance-outside.webp";
@@ -12,14 +13,32 @@ import interior from "@/assets/venue/interior.webp";
 const images = [entranceOutside, entrance, exterior, interior];
 
 export function HeroSection() {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload other images after hero image loads
+    if (imageLoaded) {
+      images.forEach((imageSrc) => {
+        const img = new Image();
+        img.src = imageSrc;
+      });
+    }
+  }, [imageLoaded]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Carousel - Using first image */}
       <div className="absolute inset-0">
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-yellow-900 to-red-800 animate-pulse" />
+        )}
         <img
           src={entrance}
           alt="The Red Garden Venue"
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          loading="eager"
+          decoding="async"
+          onLoad={() => setImageLoaded(true)}
         />
         <div className="hero-overlay absolute inset-0" />
         <div className="pattern-overlay absolute inset-0" />

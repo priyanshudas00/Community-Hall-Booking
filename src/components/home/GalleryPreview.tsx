@@ -2,14 +2,21 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ProgressiveImage } from "@/components/ui/progressive-image";
+
+// Import venue images
+import entrance from "@/assets/venue/entrance.webp";
+import interior from "@/assets/venue/interior.webp";
+import exterior from "@/assets/venue/exterior.webp";
+import entranceOutside from "@/assets/venue/entrance-outside.webp";
 
 const galleryImages = [
-  { src: "/src/assets/venue/entrance.webp", alt: "Venue Entrance" },
-  { src: "/src/assets/venue/interior.webp", alt: "Interior View" },
-  { src: "/src/assets/venue/exterior.webp", alt: "Exterior View" },
-  { src: "/src/assets/venue/entrance-outside.webp", alt: "Outside View" },
-  { src: "/src/assets/venue/entrance.webp", alt: "Venue Entrance 2" },
-  { src: "/src/assets/venue/interior.webp", alt: "Interior View 2" },
+  { src: entrance, alt: "Venue Entrance" },
+  { src: interior, alt: "Interior View" },
+  { src: exterior, alt: "Exterior View" },
+  { src: entranceOutside, alt: "Outside View" },
+  { src: entrance, alt: "Venue Entrance 2" },
+  { src: interior, alt: "Interior View 2" },
 ];
 
 export function GalleryPreview() {
@@ -47,12 +54,14 @@ export function GalleryPreview() {
                 index === 0 ? "col-span-2 row-span-2" : ""
               }`}
             >
-              <img
+              <ProgressiveImage
                 src={image.src}
                 alt={image.alt}
-                className={`w-full object-cover hover:scale-105 transition-transform duration-500 ${
+                className={`hover:scale-105 transition-transform duration-500 ${
                   index === 0 ? "h-full min-h-[300px]" : "h-48"
                 }`}
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-colors duration-300" />
             </motion.div>

@@ -305,3 +305,23 @@
   .delay-400 { animation-delay: 400ms; }
   .delay-500 { animation-delay: 500ms; }
 }
+
+/* Image Optimization */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.lazy-image {
+  filter: blur(10px);
+  transition: filter 0.3s ease-in-out;
+}
+
+.lazy-image.loaded {
+  filter: blur(0);
+}
+
+/* Preload critical images */
+.preload-hero {
+  background-image: url('/src/assets/venue/entrance.webp');
+}
