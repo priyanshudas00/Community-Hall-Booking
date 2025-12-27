@@ -8,27 +8,37 @@ export default function Contact() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative pt-20 pb-12 md:pt-32 md:pb-20 bg-festive-cream">
-        <div className="absolute inset-0 -z-10">
-          <img src="/images/enterance from outside.jpg" alt="Venue exterior" className="w-full h-full object-cover opacity-80" />
+      <section className="relative pt-0 pb-0 min-h-[35vh] md:min-h-[45vh] lg:min-h-[60vh] xl:min-h-[70vh] overflow-hidden flex items-center">
+        <div className="absolute inset-0 z-0">
+          <img src="/images/enterance from outside.jpg" alt="Venue exterior" className="w-full h-full object-cover object-top md:scale-105 lg:scale-110 xl:scale-125" />
         </div>
-        <div className="pattern-lotus absolute inset-0 opacity-50" />
-        <div className="container mx-auto px-4 relative">
+        <div className="absolute inset-0 z-10 hero-overlay-banner pointer-events-none" />
+        <div className="absolute inset-0 z-15 hero-blue-overlay pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-30">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
+            className="text-center max-w-3xl mx-auto px-4 md:px-6 py-4"
           >
-            <span className="inline-block px-4 py-1 rounded-full bg-gold/20 text-gold border border-gold/30 text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1 rounded-full bg-gold/20 text-[#F5D28A] border border-gold/30 text-sm font-medium mb-4">
               Contact Us
             </span>
-            <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-              Get in <span className="text-gradient-gold">Touch</span>
+            <h1 className="font-heading text-3xl md:text-5xl font-extrabold hero-text-shadow text-white mb-4">
+              Get in <span className="text-[#F5D28A]">Touch</span>
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-[#F2F2F2] leading-[1.6] hero-text-shadow">
               We'd love to hear from you. Reach out to us for bookings, enquiries, or just to say hello!
             </p>
+
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <Button asChild size="lg" className="gradient-gold text-[#3a0d0d] hero-cta-shadow font-futuristic uppercase tracking-wider">
+                <a href="tel:+919334825254">Call Now</a>
+              </Button>
+              <Button asChild size="lg" className="bg-red-600 text-white hero-cta-shadow font-futuristic uppercase tracking-wider">
+                <a href="/booking">Book Now</a>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -44,14 +54,14 @@ export default function Contact() {
               viewport={{ once: true }}
               className="bg-card rounded-xl p-8 shadow-sm border border-border text-center hover:shadow-elegant transition-shadow"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6">
-                <Phone className="h-8 w-8" />
+              <div className="mb-6">
+                <Phone className="h-6 w-6 text-primary inline" />
               </div>
               <h3 className="font-heading text-xl font-semibold mb-2">Call Us</h3>
               <p className="text-muted-foreground text-sm mb-4">
                 Talk to us directly for immediate assistance
               </p>
-              <Button className="gradient-gold text-accent-foreground w-full" asChild>
+              <Button className="gradient-gold text-accent-foreground w-full font-futuristic uppercase tracking-wider" asChild>
                 <a href="tel:+919334825254">
                   Call Now
                 </a>
@@ -166,7 +176,7 @@ export default function Contact() {
               </div>
 
               <div className="mt-8">
-                <Button size="lg" className="gradient-gold text-accent-foreground gap-2" asChild>
+                <Button size="lg" className="gradient-gold text-accent-foreground gap-2 font-futuristic uppercase tracking-wider" asChild>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Murlichack+Rukanpura+Patna+Bihar+800031"
                     target="_blank"
@@ -205,28 +215,30 @@ export default function Contact() {
       <section className="py-12 md:py-20 bg-festive-cream">
         <div className="pattern-overlay absolute inset-0 opacity-30" />
         <div className="container mx-auto px-4 relative">
-          <div className="bg-primary rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-gold mb-4">
-              Ready to Book Your Event?
-            </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              Contact us today to schedule a venue visit or discuss your celebration requirements.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="gradient-gold text-accent-foreground gap-2" asChild>
-                <a href="tel:+919334825254">
-                  <Phone className="h-5 w-5" />
-                  Call Now
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-white/10 border-white/30 text-white hover:bg-white/20"
-                asChild
-              >
-                <Link to="/booking">Submit Enquiry</Link>
-              </Button>
+          <div className="bg-primary rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto min-h-[220px] flex items-center justify-center">
+            <div>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-gold mb-4">
+                Get in Touch
+              </h2>
+              <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
+                We'd love to hear from you. Reach out to us for bookings, enquiries, or just to say hello!
+              </p>
+              <div className="flex items-center justify-center gap-4 mt-2">
+                <Button size="lg" className="gradient-gold text-accent-foreground gap-2 font-futuristic uppercase tracking-wider" asChild>
+                  <a href="tel:+919334825254">
+                    <Phone className="h-5 w-5" />
+                    Call Now
+                  </a>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="bg-white/10 border-white/30 text-white hover:bg-white/20 gap-2 font-futuristic uppercase tracking-wider"
+                  asChild
+                >
+                  <Link to="/booking">Book Now</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

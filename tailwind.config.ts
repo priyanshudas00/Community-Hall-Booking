@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Playfair Display"', 'Georgia', 'serif'],
+        heading: ['"Playfair Display"', 'Orbitron', 'Georgia', 'serif'],
+        futuristic: ['Orbitron', 'Poppins', 'system-ui', 'sans-serif'],
         body: ['Poppins', 'system-ui', 'sans-serif'],
       },
       colors: {

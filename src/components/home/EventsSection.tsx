@@ -103,7 +103,7 @@ export function EventsSection() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <Button asChild size="lg" className="gradient-gold text-accent-foreground gap-2">
+          <Button asChild size="lg" className="gradient-gold text-accent-foreground gap-2 font-futuristic uppercase tracking-wider">
             <Link to="/events">
               View All Events
               <ChevronRight className="h-4 w-4" />

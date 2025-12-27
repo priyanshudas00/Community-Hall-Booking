@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/layout/Layout";
 import { CheckCircle, Heart, Star, Users } from "lucide-react";
 import { ProgressiveImage } from "@/components/ui/progressive-image";
+import { Button } from "@/components/ui/button"; 
 
 const exterior = "/images/exterior look.jpg";
 const interior = "/images/interior look.jpg";
@@ -39,29 +40,39 @@ export default function About() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative pt-20 pb-12 md:pt-32 md:pb-20 bg-festive-cream">
+      <section className="relative pt-0 pb-0 min-h-[35vh] md:min-h-[45vh] lg:min-h-[60vh] xl:min-h-[70vh] overflow-hidden">
         {/* Background image (local) */}
-        <div className="absolute inset-0 -z-10">
-          <img src="/images/exterior look.jpg" alt="Venue background" className="w-full h-full object-cover opacity-80" />
+        <div className="absolute inset-0 z-0">
+          <img src="/images/exterior look.jpg" alt="Venue background" className="w-full h-full object-cover object-top md:scale-105 lg:scale-110 xl:scale-125" />
         </div>
-        <div className="pattern-lotus absolute inset-0 opacity-50" />
-        <div className="container mx-auto px-4 relative">
+        <div className="absolute inset-0 z-10 hero-overlay-banner pointer-events-none" />
+        <div className="absolute inset-0 z-15 hero-blue-overlay pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-30">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
+            className="text-center max-w-3xl mx-auto px-4 md:px-6 pt-16 md:pt-24 pb-6"
           >
             <span className="inline-block px-4 py-1 rounded-full bg-gold/20 text-gold border border-gold/30 text-sm font-medium mb-4">
               About Us
             </span>
-            <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-              Welcome to <span className="text-gradient-gold">The Red Garden</span>
+            <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-extrabold hero-text-shadow text-white mb-4">
+              Welcome to <span className="text-[#F5D28A]">The Red Garden</span>
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-[#F2F2F2] leading-[1.6] hero-text-shadow">
               Patna's premier destination for weddings, receptions, and all your special celebrations. 
               We bring your dreams to life with our world-class facilities and dedicated service.
             </p>
+
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <Button asChild size="lg" className="gradient-gold text-[#3a0d0d] hero-cta-shadow font-futuristic uppercase tracking-wider">
+                <a href="tel:+919334825254">Call Now</a>
+              </Button>
+              <Button asChild size="lg" className="bg-red-600 text-white hero-cta-shadow font-futuristic uppercase tracking-wider">
+                <a href="/booking">Book Now</a>
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>

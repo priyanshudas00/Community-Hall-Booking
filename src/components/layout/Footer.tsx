@@ -100,13 +100,14 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-primary-foreground/60">
             <p>© {new Date().getFullYear()} The Red Garden. All rights reserved.</p>
             <div className="flex flex-col md:flex-row items-center gap-4">
-              <p>Designed and developed by Priyanshu Raj</p>
+              <p>
+                <a href="https://linkedin.com/in/priyanshudas00" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
+                  Made with ❤️ by Priyanshu Raj
+                </a>
+              </p>
               <div className="flex gap-4">
                 <a href="https://github.com/priyanshudas00" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
                   GitHub
-                </a>
-                <a href="https://linkedin.com/in/priyanshudas00" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
-                  LinkedIn
                 </a>
               </div>
               <Link to="/admin" className="hover:text-gold transition-colors">

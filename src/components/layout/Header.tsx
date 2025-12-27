@@ -21,7 +21,7 @@ export function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-red-900/80 to-yellow-900/80 backdrop-blur-md border border-red-500/30 rounded-full px-6 py-3 shadow-2xl">
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-red-700/85 via-yellow-400/28 to-white/20 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 shadow-lg">
       <div className="flex items-center gap-4">
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1">
@@ -43,13 +43,13 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-2">
-            <Button variant="outline" size="sm" className="bg-yellow-500/20 border-yellow-400/50 text-yellow-100 hover:bg-yellow-500/30 hover:border-yellow-300" asChild>
+            <Button variant="outline" size="sm" className="bg-yellow-400 text-[#3a0d0d] hover:bg-yellow-300/95 border border-yellow-300/30 shadow-sm font-futuristic uppercase tracking-wider" asChild>
               <a href="tel:+919334825254" className="gap-2">
                 <Phone className="h-4 w-4" />
                 <span className="hidden xl:inline">Call Now</span>
               </a>
             </Button>
-            <Button size="sm" className="bg-red-600 hover:bg-red-700 text-white shadow-lg" asChild>
+            <Button size="sm" className="bg-red-600 hover:bg-red-700 text-white shadow-lg font-futuristic uppercase tracking-wider" asChild>
               <Link to="/booking">
                 Book Now
               </Link>
@@ -68,7 +68,7 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gradient-to-b from-red-900/90 to-yellow-900/90 backdrop-blur-md border border-red-500/30 rounded-lg shadow-2xl animate-fade-in min-w-[200px]">
+        <div className="lg:hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gradient-to-b from-red-700/85 via-yellow-400/28 to-white/12 backdrop-blur-md border border-white/10 rounded-lg shadow-lg animate-fade-in min-w-[200px]">
           <nav className="px-4 py-4 flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link
@@ -86,13 +86,13 @@ export function Header() {
               </Link>
             ))}
             <div className="flex gap-2 pt-4 border-t border-red-500/30 mt-2">
-              <Button variant="outline" size="sm" className="flex-1 bg-yellow-500/20 border-yellow-400/50 text-yellow-100 hover:bg-yellow-500/30" asChild>
+              <Button variant="outline" size="sm" className="flex-1 bg-yellow-500/20 border-yellow-400/50 text-yellow-100 hover:bg-yellow-500/30 font-futuristic uppercase tracking-wider" asChild>
                 <a href="tel:+919334825254" className="gap-2">
                   <Phone className="h-4 w-4" />
                   Call
                 </a>
               </Button>
-              <Button size="sm" className="flex-1 bg-red-600 hover:bg-red-700 text-white shadow-lg" asChild>
+              <Button size="sm" className="flex-1 bg-red-600 hover:bg-red-700 text-white shadow-lg font-futuristic uppercase tracking-wider" asChild>
                 <Link to="/booking" onClick={() => setIsMenuOpen(false)}>
                   Book Now
                 </Link>

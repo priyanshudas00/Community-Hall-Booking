@@ -26,7 +26,7 @@ export function CTASection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               size="lg"
-              className="gradient-gold text-accent-foreground font-semibold gap-2 min-w-[180px]"
+              className="gradient-gold text-accent-foreground font-semibold gap-2 min-w-[180px] font-futuristic uppercase tracking-wider"
               asChild
             >
               <a href="tel:+919334825254">

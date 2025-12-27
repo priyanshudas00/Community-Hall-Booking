@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -197,14 +197,50 @@
     );
   }
 
-  /* Hero overlay gradient */
+  /* Hero overlay gradient (deep maroon / dark shadow to improve readability) */
   .hero-overlay {
     background: linear-gradient(
       to bottom,
-      hsla(15, 30%, 10%, 0.3) 0%,
-      hsla(15, 30%, 10%, 0.5) 50%,
-      hsla(15, 30%, 10%, 0.7) 100%
+      rgba(58,13,13,0.65) 0%,
+      rgba(0,0,0,0.55) 40%,
+      rgba(0,0,0,0.68) 100%
     );
+    pointer-events: none;
+  }
+
+  /* Lighter overlay for banner-style heroes so images stay visible */
+  .hero-overlay-banner {
+    background: linear-gradient(
+      to bottom,
+      rgba(58,13,13,0.28) 0%,
+      rgba(0,0,0,0.18) 40%,
+      rgba(0,0,0,0.12) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Blue tint overlay retained for subtle color wash (optional) */
+  .hero-blue-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(14,165,233,0.08) 0%,
+      rgba(14,165,233,0.06) 30%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Hero text glass removed — using overlay + text shadow for visibility */
+  /* If needed in future, consider using a subtle backdrop only for small screens */
+
+  /* Text shadow for improved clarity */
+  .hero-text-shadow {
+    text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Subtle button shadow for CTAs */
+  .hero-cta-shadow {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
   }
 
   /* Glass effect */
@@ -252,6 +288,12 @@
       hsl(var(--lotus-pink) / 0.15) 50%,
       hsl(var(--cream)) 100%
     );
+  }
+
+  /* Ensure document background matches theme to prevent white gaps */
+  html, body, #root {
+    height: 100%;
+    background: hsl(var(--background));
   }
 
   .bg-festive-warm {
