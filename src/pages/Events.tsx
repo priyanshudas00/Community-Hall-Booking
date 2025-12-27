@@ -21,16 +21,13 @@ interface Event {
 }
 
 // Fallback images for different event types
-const getEventImage = (eventName: string): string => {
-  const imageMap: { [key: string]: string } = {
-    'Wedding': entrance,
-    'Reception': exterior,
-    'Birthday Party': interior,
-    'Engagement': entranceOutside,
-    'Anniversary': entrance,
-    'Corporate Events': exterior,
-  };
-  return imageMap[eventName] || entrance; // Default to entrance if no match
+const eventImages = {
+  'Wedding': entrance,
+  'Reception': exterior,
+  'Birthday Party': interior,
+  'Engagement': entranceOutside,
+  'Anniversary': entrance,
+  'Corporate Events': exterior,
 };
 
 export default function Events() {
@@ -98,7 +95,7 @@ export default function Events() {
                 >
                   <div className="relative h-48 overflow-hidden">
                     <ProgressiveImage
-                      src={event.image_url || getEventImage(event.name)}
+                      src={event.image_url || eventImages[event.name as keyof typeof eventImages] || entrance}
                       alt={event.name}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
