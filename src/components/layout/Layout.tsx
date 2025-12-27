@@ -5,6 +5,7 @@ import { MobileNav } from "./MobileNav";
 import { FloatingLogo } from "./FloatingLogo";
 import { Footer } from "./Footer";
 import { WhatsAppButton } from "./WhatsAppButton";
+import { Wallpaper } from "./Wallpaper";
 
 interface LayoutProps {
   children: ReactNode;
@@ -20,7 +21,8 @@ export function Layout({ children }: LayoutProps) {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      <Wallpaper />
       <FloatingLogo />
       <Header />
       <main className="flex-1">
@@ -28,7 +30,7 @@ export function Layout({ children }: LayoutProps) {
       </main>
       <Footer />
       <WhatsAppButton />
-      {/* Mobile bottom navigation (visible only on small screens) */}
+      {/* Floating independent circular buttons for mobile (visible only on small screens) */}
       <MobileNav />
     </div>
   );

@@ -367,3 +367,19 @@ img {
 .preload-hero {
   background-image: url('/images/enterance.jpg');
 }
+
+/* Full-screen wallpaper for a home-screen feel */
+.wallpaper {
+  background-image: url('/images/enterance.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  will-change: transform;
+}
+
+/* Soft floating shadow for circular buttons */
+.shadow-soft {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}

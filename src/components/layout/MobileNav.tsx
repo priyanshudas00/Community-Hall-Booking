@@ -13,27 +13,34 @@ export function MobileNav() {
     { name: "Contact", path: "/contact", icon: Phone },
   ];
 
+  // fixed positions (percent-based) so each button floats independently
+  const positions = [
+    "left-[12%] bottom-6",
+    "left-[32%] bottom-6",
+    "left-[50%] bottom-6 -translate-x-1/2",
+    "left-[68%] bottom-6",
+    "left-[88%] bottom-6",
+  ];
+
   return (
-    <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%_-_2rem)] max-w-md bg-card/80 backdrop-blur rounded-xl shadow-lg border border-border p-2 lg:hidden">
-      <ul className="flex items-center justify-between">
-        {items.map((it) => {
-          const Icon = it.icon;
-          const active = current === it.path;
-          return (
-            <li key={it.path} className="flex-1">
-              <Link
-                to={it.path}
-                className={`flex flex-col items-center justify-center py-3 px-3 rounded-md text-sm ${active ? 'text-primary' : 'text-muted-foreground'}`}
-                aria-current={active ? 'page' : undefined}
-                aria-label={it.name}
-              >
-                <Icon className="h-7 w-7" />
-                <span className="mt-1 text-xs">{it.name}</span>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
+    <>
+      {items.map((it, idx) => {
+        const Icon = it.icon;
+        const active = current === it.path;
+        const pos = positions[idx] ?? "left-[50%] bottom-6";
+
+        return (
+          <Link
+            key={it.path}
+            to={it.path}
+            aria-label={it.name}
+            className={`fixed ${pos} z-50 w-14 h-14 rounded-full flex items-center justify-center ${active ? "bg-red-600 text-white scale-95" : "bg-transparent text-muted-foreground"} shadow-soft lg:hidden transition-transform hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500`}
+          >
+            <Icon className="h-6 w-6" />
+          </Link>
+        );
+      })}
+    </>
   );
 }
+

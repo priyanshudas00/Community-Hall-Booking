@@ -21,7 +21,7 @@ export function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-red-700/85 via-yellow-400/28 to-white/20 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 shadow-lg">
+    <header className="hidden lg:block fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-red-700/85 via-yellow-400/28 to-white/20 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 shadow-lg">
       <div className="flex items-center gap-4">
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1">
