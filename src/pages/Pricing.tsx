@@ -67,6 +67,9 @@ export default function Pricing() {
     <Layout>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-festive-cream">
+        <div className="absolute inset-0 -z-10">
+          <img src="https://source.unsplash.com/1600x900/?banquet-hall" alt="Banquet hall" className="w-full h-full object-cover opacity-80" />
+        </div>
         <div className="pattern-lotus absolute inset-0 opacity-50" />
         <div className="container mx-auto px-4 relative">
           <motion.div
