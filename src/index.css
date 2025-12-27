@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The Red Garden - Wedding Venue Design System
+   Theme: Bihar/Mithila Cultural Inspired
+   Colors: Sindoor Red, Turmeric Gold, Lotus Pink, Saffron Orange, Cream White
+   Typography: Playfair Display (headings), Poppins (body)
+   Style: Warm, festive Mithila wedding aesthetics
+*/
+
+@layer base {
+  :root {
+    /* Mithila-inspired warm cream background */
+    --background: 35 40% 97%;
+    --foreground: 15 35% 18%;
+
+    --card: 38 45% 98%;
+    --card-foreground: 15 35% 18%;
+
+    --popover: 38 45% 98%;
+    --popover-foreground: 15 35% 18%;
+
+    /* Primary: Sindoor Red - Traditional Bihari wedding color */
+    --primary: 5 70% 45%;
+    --primary-foreground: 40 50% 97%;
+
+    /* Secondary: Soft lotus pink - Mithila art inspired */
+    --secondary: 350 55% 94%;
+    --secondary-foreground: 5 60% 35%;
+
+    /* Muted: Warm beige from Mithila paintings */
+    --muted: 35 35% 92%;
+    --muted-foreground: 15 15% 45%;
+
+    /* Accent: Turmeric Gold - Auspicious color */
+    --accent: 42 85% 55%;
+    --accent-foreground: 15 35% 15%;
+
+    /* Gold variations - Haldi inspired */
+    --gold: 42 85% 55%;
+    --gold-light: 45 70% 68%;
+    --gold-dark: 40 90% 40%;
+
+    /* Sindoor red variants */
+    --red-deep: 5 75% 38%;
+    --red-light: 8 60% 55%;
+    --red-dark: 2 80% 28%;
+
+    /* Lotus pink variants */
+    --lotus-pink: 350 60% 85%;
+    --lotus-dark: 350 50% 70%;
+
+    /* Saffron orange - Festival color */
+    --saffron: 28 90% 55%;
+    --saffron-light: 30 85% 70%;
+
+    /* Cream variants - Like fresh malai */
+    --cream: 38 50% 95%;
+    --cream-dark: 35 35% 88%;
+
+    /* Peacock blue accent for contrast */
+    --peacock: 195 70% 40%;
+    --peacock-light: 195 60% 55%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 50% 97%;
+
+    --border: 35 30% 88%;
+    --input: 35 30% 88%;
+    --ring: 5 70% 45%;
+
+    --radius: 0.75rem;
+
+    /* Admin sidebar - Deep red theme */
+    --sidebar-background: 5 75% 25%;
+    --sidebar-foreground: 40 50% 97%;
+    --sidebar-primary: 42 85% 55%;
+    --sidebar-primary-foreground: 15 35% 15%;
+    --sidebar-accent: 5 60% 35%;
+    --sidebar-accent-foreground: 40 50% 97%;
+    --sidebar-border: 5 55% 35%;
+    --sidebar-ring: 42 85% 55%;
+  }
+
+  .dark {
+    --background: 15 30% 8%;
+    --foreground: 40 50% 95%;
+
+    --card: 15 25% 12%;
+    --card-foreground: 40 50% 95%;
+
+    --popover: 15 25% 12%;
+    --popover-foreground: 40 50% 95%;
+
+    --primary: 42 85% 55%;
+    --primary-foreground: 15 35% 10%;
+
+    --secondary: 15 30% 18%;
+    --secondary-foreground: 40 50% 95%;
+
+    --muted: 15 20% 20%;
+    --muted-foreground: 35 25% 65%;
+
+    --accent: 5 60% 40%;
+    --accent-foreground: 40 50% 95%;
+
+    --gold: 42 85% 55%;
+    --gold-light: 45 70% 65%;
+    --gold-dark: 40 90% 45%;
+
+    --red-deep: 5 60% 50%;
+    --red-light: 8 55% 60%;
+    --red-dark: 2 70% 35%;
+
+    --lotus-pink: 350 40% 30%;
+    --lotus-dark: 350 35% 25%;
+
+    --saffron: 28 80% 50%;
+    --saffron-light: 30 75% 60%;
+
+    --cream: 35 25% 20%;
+    --cream-dark: 35 20% 15%;
+
+    --peacock: 195 60% 45%;
+    --peacock-light: 195 55% 55%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 40 50% 95%;
+
+    --border: 15 25% 22%;
+    --input: 15 25% 22%;
+    --ring: 42 85% 55%;
+
+    --sidebar-background: 15 30% 8%;
+    --sidebar-foreground: 40 50% 95%;
+    --sidebar-primary: 42 85% 55%;
+    --sidebar-primary-foreground: 15 35% 10%;
+    --sidebar-accent: 15 35% 20%;
+    --sidebar-accent-foreground: 40 50% 95%;
+    --sidebar-border: 15 25% 22%;
+    --sidebar-ring: 42 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* Turmeric gold gradient - Haldi ceremony inspired */
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-dark)) 100%);
+  }
+
+  /* Sindoor red gradient */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--red-dark)) 100%);
+  }
+
+  /* Warm cream gradient - Mithila wall art inspired */
+  .gradient-cream {
+    background: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--background)) 100%);
+  }
+
+  /* Lotus pink gradient - Maithili art flowers */
+  .gradient-lotus {
+    background: linear-gradient(135deg, hsl(var(--lotus-pink)) 0%, hsl(var(--lotus-dark)) 100%);
+  }
+
+  /* Saffron sunrise gradient */
+  .gradient-saffron {
+    background: linear-gradient(135deg, hsl(var(--saffron-light)) 0%, hsl(var(--saffron)) 100%);
+  }
+
+  /* Mithila festive gradient - blend of wedding colors */
+  .gradient-mithila {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--cream)) 0%,
+      hsl(var(--lotus-pink)) 25%,
+      hsl(var(--saffron-light) / 0.3) 50%,
+      hsl(var(--cream)) 75%,
+      hsl(var(--gold-light) / 0.2) 100%
+    );
+  }
+
+  /* Hero overlay gradient */
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      hsla(15, 30%, 10%, 0.3) 0%,
+      hsla(15, 30%, 10%, 0.5) 50%,
+      hsla(15, 30%, 10%, 0.7) 100%
+    );
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-background/80 backdrop-blur-lg;
+  }
+
+  /* Elegant card shadow with warm tones */
+  .shadow-elegant {
+    box-shadow: 
+      0 4px 6px -1px hsla(5, 70%, 45%, 0.08),
+      0 2px 4px -2px hsla(5, 70%, 45%, 0.08);
+  }
+
+  /* Golden glow effect */
+  .glow-gold {
+    box-shadow: 0 0 30px hsla(42, 85%, 55%, 0.3);
+  }
+
+  /* Saffron glow */
+  .glow-saffron {
+    box-shadow: 0 0 25px hsla(28, 90%, 55%, 0.25);
+  }
+
+  /* Decorative border - inspired by Mithila art */
+  .border-ornate {
+    border: 1px solid hsl(var(--gold) / 0.3);
+  }
+
+  /* Mithila art inspired pattern overlay */
+  .pattern-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a574' fill-opacity='0.06'%3E%3Cpath d='M40 0L50 10L40 20L30 10L40 0zM0 40L10 30L20 40L10 50L0 40zM40 60L50 70L40 80L30 70L40 60zM60 40L70 30L80 40L70 50L60 40zM40 30L50 40L40 50L30 40L40 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Lotus pattern for special sections */
+  .pattern-lotus {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e8b4c8' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='8'/%3E%3Ccircle cx='30' cy='30' r='15' stroke='%23e8b4c8' stroke-width='0.5' fill='none'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Festive section backgrounds */
+  .bg-festive-cream {
+    background: linear-gradient(
+      to bottom right,
+      hsl(var(--cream)) 0%,
+      hsl(var(--lotus-pink) / 0.15) 50%,
+      hsl(var(--cream)) 100%
+    );
+  }
+
+  .bg-festive-warm {
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--background)) 0%,
+      hsl(var(--saffron-light) / 0.08) 50%,
+      hsl(var(--background)) 100%
+    );
+  }
+}
+
+@layer utilities {
+  /* Text with gold gradient */
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-dark)) 100%);
+  }
+
+  /* Text with saffron gradient */
+  .text-gradient-saffron {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--saffron)) 0%, hsl(var(--gold)) 100%);
+  }
+
+  /* Hover scale animation */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  /* Smooth fade in animation */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Stagger animation delay utilities */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
