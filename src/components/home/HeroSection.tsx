@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, Calendar, ChevronRight } from "lucide-react";
+import { Phone, MessageCircle, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import venue images
@@ -109,25 +109,6 @@ export function HeroSection() {
               </Link>
             </Button>
           </motion.div>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
-        >
-          <div className="flex flex-col items-center gap-2 text-white/80">
-            <span className="text-sm font-medium">Scroll to explore</span>
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="text-gold"
-            >
-              <ChevronRight className="h-6 w-6 rotate-90" />
-            </motion.div>
-          </div>
         </motion.div>
       </div>
     </section>

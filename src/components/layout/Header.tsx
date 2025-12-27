@@ -21,15 +21,8 @@ export function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 shadow-lg">
-      <div className="flex items-center justify-between gap-6">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <span className="font-heading text-lg md:text-xl font-bold text-white">
-            The Red Garden
-          </span>
-        </Link>
-
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-gradient-to-r from-red-900/80 to-yellow-900/80 backdrop-blur-md border border-red-500/30 rounded-full px-6 py-3 shadow-2xl">
+      <div className="flex items-center gap-4">
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
@@ -37,10 +30,10 @@ export function Header() {
               key={link.path}
               to={link.path}
               className={cn(
-                "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                "px-3 py-2 rounded-md text-sm font-medium transition-all duration-300",
                 isActive(link.path)
-                  ? "text-gold bg-gold/20"
-                  : "text-white/80 hover:text-gold hover:bg-white/10"
+                  ? "text-yellow-300 bg-red-500/30 shadow-lg"
+                  : "text-orange-100 hover:text-yellow-300 hover:bg-red-500/20"
               )}
             >
               {link.name}
@@ -50,13 +43,13 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-2">
-            <Button variant="outline" size="sm" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
+            <Button variant="outline" size="sm" className="bg-yellow-500/20 border-yellow-400/50 text-yellow-100 hover:bg-yellow-500/30 hover:border-yellow-300" asChild>
               <a href="tel:+919334825254" className="gap-2">
                 <Phone className="h-4 w-4" />
                 <span className="hidden xl:inline">Call Now</span>
               </a>
             </Button>
-            <Button size="sm" className="bg-gold text-white hover:bg-gold/80 gap-2" asChild>
+            <Button size="sm" className="bg-red-600 hover:bg-red-700 text-white shadow-lg" asChild>
               <Link to="/booking">
                 Book Now
               </Link>
@@ -66,7 +59,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-white"
+            className="lg:hidden p-2 text-orange-100 hover:text-yellow-300 transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -75,7 +68,7 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg animate-fade-in min-w-[200px]">
+        <div className="lg:hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gradient-to-b from-red-900/90 to-yellow-900/90 backdrop-blur-md border border-red-500/30 rounded-lg shadow-2xl animate-fade-in min-w-[200px]">
           <nav className="px-4 py-4 flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link
@@ -83,23 +76,23 @@ export function Header() {
                 to={link.path}
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
-                  "px-4 py-3 rounded-md text-sm font-medium transition-colors",
+                  "px-4 py-3 rounded-md text-sm font-medium transition-all duration-300",
                   isActive(link.path)
-                    ? "text-gold bg-gold/20"
-                    : "text-white/80 hover:text-gold hover:bg-white/10"
+                    ? "text-yellow-300 bg-red-500/30 shadow-lg"
+                    : "text-orange-100 hover:text-yellow-300 hover:bg-red-500/20"
                 )}
               >
                 {link.name}
               </Link>
             ))}
-            <div className="flex gap-2 pt-4 border-t border-white/20 mt-2">
-              <Button variant="outline" size="sm" className="flex-1 bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
+            <div className="flex gap-2 pt-4 border-t border-red-500/30 mt-2">
+              <Button variant="outline" size="sm" className="flex-1 bg-yellow-500/20 border-yellow-400/50 text-yellow-100 hover:bg-yellow-500/30" asChild>
                 <a href="tel:+919334825254" className="gap-2">
                   <Phone className="h-4 w-4" />
                   Call
                 </a>
               </Button>
-              <Button size="sm" className="flex-1 bg-gold text-white hover:bg-gold/80" asChild>
+              <Button size="sm" className="flex-1 bg-red-600 hover:bg-red-700 text-white shadow-lg" asChild>
                 <Link to="/booking" onClick={() => setIsMenuOpen(false)}>
                   Book Now
                 </Link>
