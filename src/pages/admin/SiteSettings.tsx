@@ -251,7 +251,18 @@ export default function SiteSettings() {
             <CardContent>
               <div className="space-y-4">
                 <p className="text-sm text-muted-foreground">Click to register this browser for admin notifications (must be signed in as admin).</p>
-                <PushNotifications />
+                <div className="flex gap-2 items-center">
+                  <PushNotifications />
+                  <Button onClick={async ()=>{
+                    // Insert a test notification (push + email)
+                    const { error } = await supabase.from('notifications').insert([{ type: 'test_notification', payload: { message: 'This is a test notification from admin.' }, channel: 'all' }]);
+                    if (error) {
+                      alert('Failed to send test notification');
+                    } else {
+                      alert('Test notification queued');
+                    }
+                  }}>Send Test Notification</Button>
+                </div>
               </div>
             </CardContent>
           </div>

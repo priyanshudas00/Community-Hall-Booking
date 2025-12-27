@@ -22,7 +22,8 @@ interface AdminLayoutProps {
 
 const navItems = [
   { name: "Dashboard", path: "/admin", icon: LayoutDashboard },
-    { name: "Bookings", path: "/admin/bookings", icon: LayoutDashboard },
+  { name: "Bookings", path: "/admin/bookings", icon: LayoutDashboard },
+  { name: "Notifications", path: "/admin/notifications", icon: MessageSquare },
   { name: "Events", path: "/admin/events", icon: Calendar },
   { name: "Facilities", path: "/admin/facilities", icon: Building },
   { name: "Settings", path: "/admin/settings", icon: Settings },
