@@ -7,7 +7,7 @@
 DO $$
 DECLARE
     admin_user_id UUID;
-    admin_email TEXT := 'your-admin-email@example.com'; -- 🔴 CHANGE THIS TO YOUR EMAIL
+    admin_email TEXT := 'admin@theredgarden.com'; -- 🔴 CHANGE THIS TO YOUR EMAIL
 BEGIN
     -- Get the user ID for the admin email
     SELECT id INTO admin_user_id
