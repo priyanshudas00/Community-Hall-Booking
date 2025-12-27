@@ -6,6 +6,8 @@ A modern, responsive website for The Red Garden, Patna's premier destination for
 
 The Red Garden is Patna's premier venue for hosting memorable events including wedding ceremonies, reception parties, birthday celebrations, engagement functions, corporate events, and anniversary parties.
 
+<!-- Updated for Cloudflare Pages deployment -->
+
 ## Features
 
 - **Responsive Design**: Optimized for all devices
