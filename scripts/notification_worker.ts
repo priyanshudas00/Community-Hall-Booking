@@ -17,6 +17,12 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '';
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || '';
 const ADMIN_PHONE = process.env.ADMIN_PHONE || '';
 
+// Web Push VAPID keys
+const VAPID_PUBLIC_KEY = process.env.VAPID_PUBLIC_KEY || '';
+const VAPID_PRIVATE_KEY = process.env.VAPID_PRIVATE_KEY || '';
+if (VAPID_PUBLIC_KEY && VAPID_PRIVATE_KEY) {
+  webpush.setVapidDetails('mailto:' + (process.env.ADMIN_EMAIL || 'no-reply@example.com'), VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY);
+}
 async function sendEmail(subject: string, text: string) {
   if (!SENDGRID_API_KEY) throw new Error('SendGrid not configured');
   const body = {
@@ -48,11 +54,33 @@ async function sendTelegram(text: string) {
   if (!res.ok) throw new Error(`Telegram error: ${res.statusText}`);
 }
 
+import webpush from 'web-push';
+
 async function processNotification(n: any) {
   const text = `[${n.type}] ${JSON.stringify(n.payload)}`;
   const channels = (n.channel || 'all').split(',').map((s: string) => s.trim());
 
   try {
+    // Send push notifications to all subscriptions
+    if (channels.includes('all') || channels.includes('push')) {
+      const { data: subs } = await supabase.from('push_subscriptions').select('id, subscription');
+      if (subs && subs.length > 0) {
+        for (const s of subs) {
+          const pushSub = s.subscription;
+          try {
+            await webpush.sendNotification(pushSub, JSON.stringify({ title: `Alert: ${n.type}`, body: n.payload ? JSON.stringify(n.payload) : '', url: '/admin' }));
+          } catch (pushErr: any) {
+            // If subscription is no longer valid remove it
+            const status = pushErr.statusCode || (pushErr.body && JSON.parse(pushErr.body).statusCode);
+            if (status === 410 || status === 404) {
+              await supabase.from('push_subscriptions').delete().eq('id', s.id);
+            }
+            console.error('Push send error', pushErr);
+          }
+        }
+      }
+    }
+
     if (channels.includes('all') || channels.includes('email')) await sendEmail(`Alert: ${n.type}`, text);
     if (channels.includes('all') || channels.includes('sms')) await sendSms(text);
     if (channels.includes('all') || channels.includes('telegram')) await sendTelegram(text);
