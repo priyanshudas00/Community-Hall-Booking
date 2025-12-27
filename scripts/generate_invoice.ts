@@ -96,6 +96,9 @@ async function run(bookingId: string) {
   // Update booking with invoice URL and status
   await supabase.from('bookings').update({ invoice_url: publicURL, invoice_status: 'finalized', invoice_number: booking.invoice_number || `Q-${booking.id.substring(0,8)}` }).eq('id', bookingId);
 
+  // Enqueue notification for admin
+  await supabase.from('notifications').insert({ type: 'invoice_generated', booking_id: bookingId, payload: { invoice_url: publicURL }, channel: 'all' });
+
   console.log('Invoice generated and uploaded:', publicURL);
 }
 

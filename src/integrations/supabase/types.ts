@@ -134,6 +134,48 @@ export type Database = {
         }
         Relationships: []
       }
+      notifications: {
+        Row: {
+          id: string
+          type: string
+          booking_id: string | null
+          enquiry_id: string | null
+          payload: Json | null
+          channel: string | null
+          status: string | null
+          attempts: number | null
+          last_error: string | null
+          created_at: string | null
+          sent_at: string | null
+        }
+        Insert: {
+          id?: string
+          type: string
+          booking_id?: string | null
+          enquiry_id?: string | null
+          payload?: Json | null
+          channel?: string | null
+          status?: string | null
+          attempts?: number | null
+          last_error?: string | null
+          created_at?: string | null
+          sent_at?: string | null
+        }
+        Update: {
+          id?: string
+          type?: string
+          booking_id?: string | null
+          enquiry_id?: string | null
+          payload?: Json | null
+          channel?: string | null
+          status?: string | null
+          attempts?: number | null
+          last_error?: string | null
+          created_at?: string | null
+          sent_at?: string | null
+        }
+        Relationships: []
+      }
       events: {
         Row: {
           created_at: string | null
