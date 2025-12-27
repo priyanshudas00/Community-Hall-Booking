@@ -59,6 +59,60 @@ export type Database = {
         }
         Relationships: []
       }
+      bookings: {
+        Row: {
+          id: string
+          event_id: string | null
+          facility_id: string | null
+          user_name: string
+          user_email: string | null
+          user_mobile: string
+          event_date: string | null
+          start_time: string | null
+          end_time: string | null
+          guest_count: number | null
+          status: string
+          notes: string | null
+          created_by: string | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id?: string
+          event_id?: string | null
+          facility_id?: string | null
+          user_name: string
+          user_email?: string | null
+          user_mobile: string
+          event_date?: string | null
+          start_time?: string | null
+          end_time?: string | null
+          guest_count?: number | null
+          status?: string
+          notes?: string | null
+          created_by?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          event_id?: string | null
+          facility_id?: string | null
+          user_name?: string
+          user_email?: string | null
+          user_mobile?: string
+          event_date?: string | null
+          start_time?: string | null
+          end_time?: string | null
+          guest_count?: number | null
+          status?: string
+          notes?: string | null
+          created_by?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       events: {
         Row: {
           created_at: string | null
