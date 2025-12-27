@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { ProgressiveImage } from "@/components/ui/progressive-image";
 
 // Import venue images
-import entrance from "@/assets/venue/entrance.webp";
-import interior from "@/assets/venue/interior.webp";
-import exterior from "@/assets/venue/exterior.webp";
-import entranceOutside from "@/assets/venue/entrance-outside.webp";
+const entrance = "/images/enterance.jpg";
+const interior = "/images/interior look.jpg";
+const exterior = "/images/exterior look.jpg";
+const entranceOutside = "/images/enterance from outside.jpg";
 
 export function AboutSection() {
   return (
