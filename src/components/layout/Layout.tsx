@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 import { Header } from "./Header";
+import { MobileNav } from "./MobileNav";
 import { FloatingLogo } from "./FloatingLogo";
 import { Footer } from "./Footer";
 import { WhatsAppButton } from "./WhatsAppButton";
@@ -22,6 +23,8 @@ export function Layout({ children }: LayoutProps) {
       </main>
       <Footer />
       <WhatsAppButton />
+      {/* Mobile bottom navigation (visible only on small screens) */}
+      <MobileNav />
     </div>
   );
 }
