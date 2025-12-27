@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Save, Loader2 } from "lucide-react";
+import { PushNotifications } from '@/components/admin/PushNotifications';
 
 interface SiteSettings {
   id: string;
@@ -240,6 +241,20 @@ export default function SiteSettings() {
               </p>
             </div>
           </CardContent>
+
+          {/* Browser Notifications */}
+          <div className="mt-6">
+            <CardHeader>
+              <CardTitle>Browser Notifications</CardTitle>
+              <CardDescription>Enable admin browser push notifications (Chrome, Firefox)</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-sm text-muted-foreground">Click to register this browser for admin notifications (must be signed in as admin).</p>
+                <PushNotifications />
+              </div>
+            </CardContent>
+          </div>
         </Card>
 
         {/* Save Button */}

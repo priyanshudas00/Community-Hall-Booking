@@ -176,6 +176,30 @@ export type Database = {
         }
         Relationships: []
       }
+      push_subscriptions: {
+        Row: {
+          id: string
+          user_id: string
+          label: string | null
+          subscription: Json
+          created_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          label?: string | null
+          subscription: Json
+          created_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          label?: string | null
+          subscription?: Json
+          created_at?: string | null
+        }
+        Relationships: []
+      }
       events: {
         Row: {
           created_at: string | null
