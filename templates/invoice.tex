@@ -1,0 +1,138 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[explicit]{titlesec}
+\usepackage{ragged2e}
+\usepackage{decorule}
+\usepackage{background}
+\usepackage{fontawesome}
+
+% Colors
+\definecolor{deepred}{RGB}{186, 32, 32}
+\definecolor{sunflower}{RGB}{255, 204, 0}
+\definecolor{clay}{RGB}{139, 69, 19}
+\definecolor{navyblue}{RGB}{0, 32, 96}
+\definecolor{forest}{RGB}{34, 139, 34}
+
+% Background (light pattern)
+\backgroundsetup{
+  scale=1,
+  angle=0,
+  opacity=0.03,
+  contents={\begin{tikzpicture}[remember picture,overlay]
+    \fill[deepred!10] (current page.north west) rectangle (current page.south east);
+  \end{tikzpicture}}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{\textcolor{deepred}{{{company_name}}}}}
+\rhead{\textbf{\textcolor{deepred}{Booking Quotation}}}
+\cfoot{\textcolor{clay}{\thepage}}
+
+\titleformat{\section}{\normalfont\LARGE\bfseries\color{deepred}}{}{0em}{#1 \titlerule*[1pc]{\textcolor{sunflower}{•••}}}
+
+\begin{document}
+
+% Header with logo (if provided)
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east, inner sep=0pt] at (current page.north east) {\includegraphics[width=3.5cm]{{{logo_filename}}}};
+\end{tikzpicture}
+
+\vspace*{2cm}
+
+\begin{center}
+{\fontsize{32}{36}\selectfont\textcolor{deepred}{{{company_name}}}}\\
+\vspace{6pt}
+{\large \textbf{Community Hall & Event Venue}}\\
+\vspace{10pt}
+{\large \textbf{Location:} {{{location}}}}\\
+{\large \faPhone~{{{phone}}} ~~ \faEnvelope~{{{email}}}}\\
+\vspace{10pt}
+\decorule[color=sunflower, width=0.8\textwidth, thickness=2pt]
+\end{center}
+
+\vspace{12pt}
+
+% Quotation metadata
+\noindent
+\textbf{Quotation Number:} {{{quotation_number}}}\\
+\textbf{Quotation Date:} {{{quotation_date}}}\\
+\textbf{Auspicious Timing:} {{{auspicious_timing}}}\\
+
+\vspace{12pt}
+
+% Customer details
+\section*{\centering\textcolor{deepred}{\large ⧫ Customer Details ⧫}}
+\begin{tabular}{p{6cm} p{9cm}}
+\textbf{Name of Host} & : {{{customer_name}}} \\
+\textbf{Contact Number} & : {{{customer_mobile}}} \\
+\textbf{Address} & : {{{customer_address}}} \\
+\textbf{Event Type} & : {{{event_type}}} \\
+\textbf{Auspicious Date} & : {{{event_date}}} \\
+\textbf{Number of Guests} & : {{{guest_count}}} \\
+\textbf{Event Duration} & : {{{duration}}} \\
+\end{tabular}
+
+\vspace{12pt}
+
+% Services table placeholder
+\section*{\centering\textcolor{deepred}{\large ⧫ Services & Charges ⧫}}
+\begin{longtable}{|p{0.8cm}|p{8cm}|p{3cm}|p{3cm}|}
+\hline
+\textbf{No.} & \textbf{Service Description} & \textbf{Amount (₹)} & \textbf{Remarks} \\
+\hline
+{{{services_rows}}}
+\hline
+\end{longtable}
+
+\vspace{12pt}
+
+% Totals
+\begin{flushright}
+\begin{tabular}{p{6cm} r}
+\textbf{Total Service Charges:} & ₹ {{{total_amount}}} \\
+\textbf{GST @ 18\%:} & ₹ {{{gst}}} \\
+\hline
+\textbf{Total Amount Payable:} & \textbf{₹ {{{total_payable}}}} \\
+\end{tabular}
+\end{flushright}
+
+\vspace{12pt}
+
+% Payment details
+\section*{\centering\textcolor{deepred}{\large ⧫ Payment Details ⧫}}
+\begin{tabular}{p{8cm} p{7cm}}
+\textbf{Bank Name:} {{{bank_name}}} & \textbf{A/C No:} {{{bank_account}}} \\
+\textbf{IFSC:} {{{ifsc}}} & \textbf{Branch:} {{{branch}}} \\
+\end{tabular}
+
+\vspace{18pt}
+
+% Signatures
+\begin{minipage}{0.5\textwidth}
+\centering
+\textcolor{deepred}{\textbf{For {{{company_name}},}}}\\
+\vspace{10pt}
+\underline{\hspace{6cm}}\\
+\textbf{Manager}\\
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\centering
+\textcolor{deepred}{\textbf{Customer Acceptance,}}\\
+\vspace{10pt}
+\underline{\hspace{5cm}}\\
+\textbf{Customer Signature}\\
+\end{minipage}
+
+\vspace{20pt}
+
+\end{document}

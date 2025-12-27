@@ -74,6 +74,13 @@ export type Database = {
           status: string
           notes: string | null
           created_by: string | null
+          invoice_number: string | null
+          invoice_url: string | null
+          total_amount: number | null
+          gst: number | null
+          amount_paid: number | null
+          payment_status: string | null
+          invoice_status: string | null
           created_at: string | null
           updated_at: string | null
         }
@@ -91,6 +98,13 @@ export type Database = {
           status?: string
           notes?: string | null
           created_by?: string | null
+          invoice_number?: string | null
+          invoice_url?: string | null
+          total_amount?: number | null
+          gst?: number | null
+          amount_paid?: number | null
+          payment_status?: string | null
+          invoice_status?: string | null
           created_at?: string | null
           updated_at?: string | null
         }
@@ -108,6 +122,13 @@ export type Database = {
           status?: string
           notes?: string | null
           created_by?: string | null
+          invoice_number?: string | null
+          invoice_url?: string | null
+          total_amount?: number | null
+          gst?: number | null
+          amount_paid?: number | null
+          payment_status?: string | null
+          invoice_status?: string | null
           created_at?: string | null
           updated_at?: string | null
         }
