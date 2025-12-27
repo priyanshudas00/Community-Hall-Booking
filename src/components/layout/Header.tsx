@@ -21,43 +21,42 @@ export function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <span className="font-heading text-xl md:text-2xl font-bold text-primary">
-              The Red Garden
-            </span>
-          </Link>
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 shadow-lg">
+      <div className="flex items-center justify-between gap-6">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2">
+          <span className="font-heading text-lg md:text-xl font-bold text-white">
+            The Red Garden
+          </span>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={cn(
-                  "px-4 py-2 rounded-md text-sm font-medium transition-colors",
-                  isActive(link.path)
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-1">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={cn(
+                "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                isActive(link.path)
+                  ? "text-gold bg-gold/20"
+                  : "text-white/80 hover:text-gold hover:bg-white/10"
+              )}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-2">
-            <Button variant="outline" size="sm" asChild>
-              <a href="tel:[YOUR_NUMBER]" className="gap-2">
+            <Button variant="outline" size="sm" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
+              <a href="tel:+919334825254" className="gap-2">
                 <Phone className="h-4 w-4" />
                 <span className="hidden xl:inline">Call Now</span>
               </a>
             </Button>
-            <Button size="sm" className="gradient-gold text-accent-foreground gap-2" asChild>
+            <Button size="sm" className="bg-gold text-white hover:bg-gold/80 gap-2" asChild>
               <Link to="/booking">
                 Book Now
               </Link>
@@ -67,18 +66,17 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-white"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-      </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-background border-t border-border animate-fade-in">
-          <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
+        <div className="lg:hidden absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg animate-fade-in min-w-[200px]">
+          <nav className="px-4 py-4 flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -87,21 +85,21 @@ export function Header() {
                 className={cn(
                   "px-4 py-3 rounded-md text-sm font-medium transition-colors",
                   isActive(link.path)
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                    ? "text-gold bg-gold/20"
+                    : "text-white/80 hover:text-gold hover:bg-white/10"
                 )}
               >
                 {link.name}
               </Link>
             ))}
-            <div className="flex gap-2 pt-4 border-t border-border mt-2">
-              <Button variant="outline" size="sm" className="flex-1" asChild>
-                <a href="tel:[YOUR_NUMBER]" className="gap-2">
+            <div className="flex gap-2 pt-4 border-t border-white/20 mt-2">
+              <Button variant="outline" size="sm" className="flex-1 bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
+                <a href="tel:+919334825254" className="gap-2">
                   <Phone className="h-4 w-4" />
                   Call
                 </a>
               </Button>
-              <Button size="sm" className="flex-1 gradient-gold text-accent-foreground" asChild>
+              <Button size="sm" className="flex-1 bg-gold text-white hover:bg-gold/80" asChild>
                 <Link to="/booking" onClick={() => setIsMenuOpen(false)}>
                   Book Now
                 </Link>

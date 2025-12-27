@@ -13,7 +13,7 @@ const images = [entranceOutside, entrance, exterior, interior];
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Carousel - Using first image */}
       <div className="absolute inset-0">
         <img
@@ -116,11 +116,17 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2"
         >
-          <div className="flex flex-col items-center gap-2 text-white/60">
-            <span className="text-sm">Scroll to explore</span>
-            <ChevronRight className="h-5 w-5 rotate-90 animate-bounce" />
+          <div className="flex flex-col items-center gap-2 text-white/80">
+            <span className="text-sm font-medium">Scroll to explore</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="text-gold"
+            >
+              <ChevronRight className="h-6 w-6 rotate-90" />
+            </motion.div>
           </div>
         </motion.div>
       </div>
