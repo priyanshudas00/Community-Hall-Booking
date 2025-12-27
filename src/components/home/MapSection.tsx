@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function MapSection() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-12 md:py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div

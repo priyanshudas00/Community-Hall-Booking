@@ -23,11 +23,11 @@ export function MobileNav() {
             <li key={it.path} className="flex-1">
               <Link
                 to={it.path}
-                className={`flex flex-col items-center justify-center py-2 px-3 rounded-md text-sm ${active ? 'text-primary' : 'text-muted-foreground'}`}
+                className={`flex flex-col items-center justify-center py-3 px-3 rounded-md text-sm ${active ? 'text-primary' : 'text-muted-foreground'}`}
                 aria-current={active ? 'page' : undefined}
                 aria-label={it.name}
               >
-                <Icon className="h-6 w-6" />
+                <Icon className="h-7 w-7" />
                 <span className="mt-1 text-xs">{it.name}</span>
               </Link>
             </li>

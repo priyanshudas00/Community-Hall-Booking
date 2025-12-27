@@ -39,10 +39,10 @@ export default function About() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-festive-cream">
-        {/* Background image (Unsplash) */}
+      <section className="relative pt-20 pb-12 md:pt-32 md:pb-20 bg-festive-cream">
+        {/* Background image (local) */}
         <div className="absolute inset-0 -z-10">
-          <img src="https://source.unsplash.com/1600x900/?venue" alt="Venue background" className="w-full h-full object-cover opacity-80" />
+          <img src="/images/exterior look.jpg" alt="Venue background" className="w-full h-full object-cover opacity-80" />
         </div>
         <div className="pattern-lotus absolute inset-0 opacity-50" />
         <div className="container mx-auto px-4 relative">
@@ -55,7 +55,7 @@ export default function About() {
             <span className="inline-block px-4 py-1 rounded-full bg-gold/20 text-gold border border-gold/30 text-sm font-medium mb-4">
               About Us
             </span>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4">
               Welcome to <span className="text-gradient-gold">The Red Garden</span>
             </h1>
             <p className="text-lg text-muted-foreground">
@@ -67,7 +67,7 @@ export default function About() {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 bg-festive-warm">
+      <section className="py-12 md:py-20 bg-festive-warm">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -118,7 +118,7 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-12 md:py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -156,7 +156,7 @@ export default function About() {
       </section>
 
       {/* Highlights Section */}
-      <section className="py-20 bg-festive-cream">
+      <section className="py-12 md:py-20 bg-festive-cream">
         <div className="pattern-overlay absolute inset-0 opacity-30" />
         <div className="container mx-auto px-4 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">

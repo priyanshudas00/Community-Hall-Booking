@@ -26,7 +26,7 @@ export function HeroSection() {
   }, [imageLoaded]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image Carousel - Using first image */}
       <div className="absolute inset-0">
         {!imageLoaded && (
@@ -69,7 +69,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="font-heading text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6"
+            className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
           >
             The{" "}
             <span className="text-gradient-gold">Red Garden</span>

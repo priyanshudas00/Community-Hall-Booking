@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export function CTASection() {
   return (
-    <section className="py-20 gradient-primary relative overflow-hidden">
+    <section className="py-12 md:py-20 gradient-primary relative overflow-hidden">
       {/* Pattern overlay */}
       <div className="pattern-overlay absolute inset-0 opacity-10" />
       

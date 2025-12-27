@@ -8,9 +8,9 @@ export default function Contact() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-festive-cream">
+      <section className="relative pt-20 pb-12 md:pt-32 md:pb-20 bg-festive-cream">
         <div className="absolute inset-0 -z-10">
-          <img src="https://source.unsplash.com/1600x900/?venue-exterior" alt="Venue exterior" className="w-full h-full object-cover opacity-80" />
+          <img src="/images/enterance from outside.jpg" alt="Venue exterior" className="w-full h-full object-cover opacity-80" />
         </div>
         <div className="pattern-lotus absolute inset-0 opacity-50" />
         <div className="container mx-auto px-4 relative">
@@ -23,7 +23,7 @@ export default function Contact() {
             <span className="inline-block px-4 py-1 rounded-full bg-gold/20 text-gold border border-gold/30 text-sm font-medium mb-4">
               Contact Us
             </span>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4">
               Get in <span className="text-gradient-gold">Touch</span>
             </h1>
             <p className="text-lg text-muted-foreground">
@@ -34,7 +34,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Cards */}
-      <section className="py-20 bg-festive-warm">
+      <section className="py-12 md:py-20 bg-festive-warm">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Phone */}
@@ -110,7 +110,7 @@ export default function Contact() {
       </section>
 
       {/* Location Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-12 md:py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Info */}
@@ -202,7 +202,7 @@ export default function Contact() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-festive-cream">
+      <section className="py-12 md:py-20 bg-festive-cream">
         <div className="pattern-overlay absolute inset-0 opacity-30" />
         <div className="container mx-auto px-4 relative">
           <div className="bg-primary rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto">

@@ -21,7 +21,7 @@ const galleryImages = [
 
 export function GalleryPreview() {
   return (
-    <section className="py-20 bg-secondary/30">
+    <section className="py-12 md:py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
@@ -42,7 +42,7 @@ export function GalleryPreview() {
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}
@@ -51,14 +51,14 @@ export function GalleryPreview() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className={`relative rounded-lg overflow-hidden shadow-elegant ${
-                index === 0 ? "col-span-2 row-span-2" : ""
+                index === 0 ? "md:col-span-2 md:row-span-2" : ""
               }`}
             >
               <ProgressiveImage
                 src={image.src}
                 alt={image.alt}
                 className={`hover:scale-105 transition-transform duration-500 ${
-                  index === 0 ? "h-full min-h-[300px]" : "h-48"
+                  index === 0 ? "h-full min-h-[220px] md:min-h-[300px]" : "h-40 md:h-48"
                 }`}
                 loading="lazy"
                 decoding="async"
