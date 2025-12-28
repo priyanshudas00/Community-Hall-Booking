@@ -7,10 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { ProgressiveImage } from "@/components/ui/progressive-image";
 import { Button } from "@/components/ui/button"; 
 
-const entranceOutside = "/images/enterance from outside.jpg";
-const entrance = "/images/enterance.jpg";
-const exterior = "/images/exterior look.jpg";
-const interior = "/images/interior look.jpg";
+import { entrance, entranceOutside, exterior, interior } from "@/lib/images";
 
 interface Facility {
   id: string;

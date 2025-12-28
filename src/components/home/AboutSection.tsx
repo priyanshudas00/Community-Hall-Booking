@@ -5,10 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ProgressiveImage } from "@/components/ui/progressive-image";
 
 // Import venue images
-const entrance = "/images/enterance.jpg";
-const interior = "/images/interior look.jpg";
-const exterior = "/images/exterior look.jpg";
-const entranceOutside = "/images/enterance from outside.jpg";
+import { entrance, interior, exterior, entranceOutside } from "@/lib/images";
 
 export function AboutSection() {
   return (
@@ -79,7 +76,7 @@ export function AboutSection() {
             <div className="space-y-4">
               <div className="rounded-lg overflow-hidden shadow-elegant">
                 <ProgressiveImage
-                  src={entrance}
+                  src="/images/enterance.jpg"
                   alt="The Red Garden Entrance"
                   className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -102,7 +99,7 @@ export function AboutSection() {
               </div>
               <div className="rounded-lg overflow-hidden shadow-elegant border-4 border-gold/20">
                 <ProgressiveImage
-                  src={entranceOutside}
+                  src="/images/enterance from outside.jpg"
                   alt="The Red Garden Outside View"
                   className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                 />

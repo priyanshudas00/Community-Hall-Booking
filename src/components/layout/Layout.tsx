@@ -5,7 +5,6 @@ import { MobileNav } from "./MobileNav";
 import { FloatingLogo } from "./FloatingLogo";
 import { Footer } from "./Footer";
 import { WhatsAppButton } from "./WhatsAppButton";
-import { Wallpaper } from "./Wallpaper";
 
 interface LayoutProps {
   children: ReactNode;
@@ -22,7 +21,6 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      <Wallpaper />
       <FloatingLogo />
       <Header />
       <main className="flex-1">

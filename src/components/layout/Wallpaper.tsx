@@ -1,8 +1,6 @@
+// Wallpaper component removed — wallpaper behavior disabled.
+// Kept as a no-op to avoid accidental imports breaking the build.
 export function Wallpaper() {
-  return (
-    <div
-      className="fixed inset-0 -z-50 wallpaper"
-      aria-hidden="true"
-    />
-  );
+  return null;
 }
+

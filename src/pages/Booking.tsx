@@ -157,7 +157,7 @@ export default function Booking() {
       {/* Hero Section */}
       <section className="relative pt-0 pb-0 min-h-[35vh] md:min-h-[45vh] lg:min-h-[60vh] xl:min-h-[70vh] overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/images/enterance.jpg" alt="Wedding background" className="w-full h-full object-cover object-top md:scale-105 lg:scale-110 xl:scale-125" />
+          <img src="/images/exterior look.jpg" alt="Wedding background" className="w-full h-full object-cover object-top md:scale-105 lg:scale-110 xl:scale-125" />
         </div>
         <div className="absolute inset-0 z-10 hero-overlay-banner pointer-events-none" />
         <div className="absolute inset-0 z-15 hero-blue-overlay pointer-events-none" />

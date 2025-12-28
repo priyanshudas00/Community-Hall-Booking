@@ -8,10 +8,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ProgressiveImage } from "@/components/ui/progressive-image";
 
-const entranceOutside = "/images/enterance from outside.jpg";
-const entrance = "/images/enterance.jpg";
-const exterior = "/images/exterior look.jpg";
-const interior = "/images/interior look.jpg";
+import { entrance, entranceOutside, exterior, interior } from "@/lib/images";
 
 interface Event {
   id: string;

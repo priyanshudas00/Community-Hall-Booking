@@ -365,19 +365,11 @@ img {
 
 /* Preload critical images */
 .preload-hero {
-  background-image: url('/images/enterance.jpg');
+  /* background-image intentionally removed to disable global wallpaper */
+  background-image: none;
 }
 
-/* Full-screen wallpaper for a home-screen feel */
-.wallpaper {
-  background-image: url('/images/enterance.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
-  will-change: transform;
-}
+
 
 /* Soft floating shadow for circular buttons */
 .shadow-soft {

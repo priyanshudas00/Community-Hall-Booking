@@ -5,12 +5,9 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
 // Import venue images
-const entranceOutside = "/images/enterance from outside.jpg";
-const entrance = "/images/enterance.jpg";
-const exterior = "/images/exterior look.jpg";
-const interior = "/images/interior look.jpg";
+import { entrance, entranceOutside, interior } from "@/lib/images";
 
-const images = [entranceOutside, entrance, exterior, interior];
+const images = [entranceOutside, entrance, entrance, interior];
 
 export function HeroSection() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -32,14 +29,17 @@ export function HeroSection() {
         {!imageLoaded && (
           <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-yellow-900 to-red-800 animate-pulse" />
         )}
-        <img
-          src={entrance}
-          alt="The Red Garden Venue"
-          className={`w-full h-full object-cover object-top transform origin-top transition-all duration-700 ${imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-100'}`}
-          loading="eager"
-          decoding="async"
-          onLoad={() => setImageLoaded(true)}
-        />
+        <picture>
+          <source srcSet={entrance} />
+          <img
+            src={entrance}
+            alt="The Red Garden Venue"
+            className={`w-full h-full object-cover object-top transform origin-top transition-all duration-700 ${imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-100'}`}
+            loading="eager"
+            decoding="async"
+            onLoad={() => setImageLoaded(true)}
+          />
+        </picture>
         <div className="hero-overlay absolute inset-0" />
       </div>
 
